@@ -46,7 +46,9 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('addNotePage');
+        },
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Container(
@@ -80,7 +82,8 @@ class ListNotes extends StatelessWidget {
           Expanded(
             flex: 3,
             child: ListTile(
-              title: Text('${a['note']}'),
+              title: Text('Title'),
+              subtitle: Text('${a['note']}'),
               trailing: Column(
                 children: [
                   IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
