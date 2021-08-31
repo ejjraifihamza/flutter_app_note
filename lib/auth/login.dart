@@ -58,7 +58,9 @@ class Login extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.only(top: 20),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushReplacementNamed('homePage');
+                    },
                     child: Text('Login'),
                     style: Theme.of(context).elevatedButtonTheme.style,
                   ),
