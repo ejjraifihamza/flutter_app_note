@@ -48,7 +48,9 @@ class Login extends StatelessWidget {
                           'Click Here',
                           style: TextStyle(color: Colors.blue),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).pushNamed('registerPage');
+                        },
                       )
                     ],
                   ),
