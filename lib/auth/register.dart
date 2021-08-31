@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
+class Register extends StatefulWidget {
+  @override
+  _RegisterState createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +34,18 @@ class Login extends StatelessWidget {
                   height: 20,
                 ),
                 TextFormField(
+                  decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.email),
+                      hintText: 'Email',
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                        width: 1,
+                      ))),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
                       prefixIcon: Icon(Icons.password),
@@ -42,14 +59,14 @@ class Login extends StatelessWidget {
                   padding: EdgeInsets.all(15),
                   child: Row(
                     children: [
-                      Text('Not Register yet '),
+                      Text('Already Registered '),
                       InkWell(
                         child: Text(
                           'Click Here',
                           style: TextStyle(color: Colors.blue),
                         ),
                         onTap: () {
-                          Navigator.of(context).pushNamed('registerPage');
+                          Navigator.of(context).pushNamed('loginPage');
                         },
                       )
                     ],
@@ -59,7 +76,7 @@ class Login extends StatelessWidget {
                   padding: EdgeInsets.only(top: 20),
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text('Login'),
+                    child: Text('Register'),
                     style: Theme.of(context).elevatedButtonTheme.style,
                   ),
                 )
