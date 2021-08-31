@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_note/home/homePage.dart';
 
 import 'auth/login.dart';
 import 'auth/register.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'loginPage': (context) => Login(),
         'registerPage': (context) => Register(),
+        'homePage': (context) => HomePage(),
       },
     );
   }
