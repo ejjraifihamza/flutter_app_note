@@ -42,7 +42,9 @@ class _AddNotesState extends State<AddNotes> {
                 height: 20,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  showBottomSheeet();
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -63,5 +65,63 @@ class _AddNotesState extends State<AddNotes> {
             ],
           )),
     );
+  }
+
+  showBottomSheeet() {
+    return showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            padding: EdgeInsets.all(20),
+            height: 170,
+            child: Column(
+              children: [
+                Text(
+                  'Please Choose Image',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      children: [
+                        Icon(Icons.photo),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          'From Gallery',
+                          style: TextStyle(fontSize: 25),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    width: double.infinity,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Icon(Icons.camera),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          'From Camera',
+                          style: TextStyle(fontSize: 25),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        });
   }
 }
